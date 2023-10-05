@@ -1,0 +1,15 @@
+<div class="all-pro-align">
+<div class="row row-cols-1 row-cols-md-4 g-4 ">
+  <div class="col product-list" routerLink="/product-menu/order" *ngFor="let product of products">
+    <div class="card" (click)="onProduct(product)">
+      <img src="{{product.imgLink}}" class="card-img-top pro-align" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{product.productName}}</h5>
+        <p class="card-text">100g</p>
+        <p>Rs. {{product.unitPrice}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+

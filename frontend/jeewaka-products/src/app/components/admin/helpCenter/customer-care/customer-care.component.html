@@ -1,0 +1,58 @@
+<div class="card">
+  <div class="card-body">
+    <h3>Customer Help</h3>
+    <nav>
+      <div class="nav nav-tabs" id="nav-tab" role="tablist">
+        <button class="nav-link" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button"
+                role="tab" aria-controls="nav-home" aria-selected="true">Pending</button>
+        <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button"
+                role="tab" aria-controls="nav-profile" aria-selected="false">Responded</button>
+      </div>
+    </nav>
+    <div class="tab-content" id="nav-tabContent">
+      <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0">
+        <table class="table table-striped table-hover">
+          <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Comment Id</th>
+            <th scope="col">Email</th>
+            <th scope="col">Subject</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let comment of pendingComments; let i = index;" (click)="OnSelectComment(comment)">
+            <td scope="row">{{i+1}}</td>
+            <td style="text-align: center;">{{comment.commentId}}</td>
+            <td>{{comment.email}}</td>
+            <td>{{comment.subject}}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">
+        <table class="table table-striped table-hover">
+          <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Comment Id</th>
+            <th scope="col">Email</th>
+            <th scope="col">Subject</th>
+            <th scope="col">Action</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let comment of respondedComments; let i = index;">
+            <td scope="row">{{i+1}}</td>
+            <td style="text-align: center;">{{comment.commentId}}</td>
+            <td>{{comment.email}}</td>
+            <td>{{comment.subject}}</td>
+            <td><fa-icon [icon]="faUndo" style="cursor: pointer;" (click)="onUndoBtn(comment)"></fa-icon></td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+

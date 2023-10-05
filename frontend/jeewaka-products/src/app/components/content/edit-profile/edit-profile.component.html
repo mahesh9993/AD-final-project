@@ -1,0 +1,88 @@
+<section style="background-color: #eee;">
+  <div class="container py-5 h-100">
+    <div class="row justify-content-center align-items-center h-100">
+      <div class="col-12 col-lg-9 col-xl-7">
+        <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+          <div class="card-body p-4 p-md-5">
+            <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">Edit Profile</h3>
+            <form [formGroup]="editUserForm">
+
+              <div class="row">
+                <div class="col-md-6 mb-4">
+
+                  <div class="form-outline">
+                    <input type="text" id="firstName" class="form-control form-control" formControlName="firstName"/>
+                    <label class="form-label" for="firstName">First Name</label>
+                  </div>
+
+                </div>
+                <div class="col-md-6 mb-4">
+
+                  <div class="form-outline">
+                    <input type="text" id="lastName" class="form-control form-control" formControlName="lastName"/>
+                    <label class="form-label" for="lastName">Last Name</label>
+                  </div>
+
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 mb-4 pb-2">
+
+                  <div class="form-outline">
+                    <input type="email" id="emailAddress" class="form-control form-control" formControlName="userName"/>
+                    <label class="form-label" for="emailAddress">Email</label>
+                  </div>
+
+                </div>
+                <div class="col-md-6 mb-4 pb-2">
+
+                  <div class="form-outline">
+                    <input type="tel" id="phoneNumber" class="form-control form-control" formControlName="contact"/>
+                    <label class="form-label" for="phoneNumber">Phone Number</label>
+                  </div>
+
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 mb-4 pb-2">
+
+                  <div class="form-outline">
+                    <input type="password" class="form-control form-control" formControlName="newPassword"/>
+                    <label class="form-label">New Password</label>
+                  </div>
+
+                </div>
+                <div class="col-md-6 mb-4 pb-2">
+
+                  <div class="form-outline">
+                    <input type="password" class="form-control form-control" formControlName="confirmPassword"/>
+                    <label class="form-label">Confirm Password</label>
+                  </div>
+
+                </div>
+              </div>
+
+              <!-- Address input -->
+              <div class="form-outline mb-4">
+                <input type="text" id="registerName" class="form-control" formControlName="address"/>
+                <label class="form-label" for="registerName">Address</label>
+              </div>
+
+              <div class="form-outline mb-4">
+                <input type="text"  class="form-control" formControlName="district"/>
+                <label class="form-label">Contact</label>
+              </div>
+
+              <div class="mt-4 pt-2">
+                <input class="btn sbbtn" type="submit" value="Save" (click)="onSaveBtn()"/>
+              </div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

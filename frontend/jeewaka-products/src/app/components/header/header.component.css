@@ -1,0 +1,17 @@
+.logo{
+  width: 150px;
+  height: auto;
+  float: left;
+  margin-top: 3px;
+  margin-left: 10px;
+}
+
+.bc{
+  background-color: white;
+}
+
+.navicon{
+  display: inline-block;
+  margin-left: 70px;
+}
+

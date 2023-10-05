@@ -1,0 +1,71 @@
+<div class="card mt-4">
+  <div class="card-body">
+    <span *ngIf="formType=='new'">
+      <h3>New Product</h3>
+    </span>
+    <span *ngIf="formType=='edit'">
+      <h3>Edit Product</h3>
+    </span>
+    <form [formGroup]="productForm">
+      <div class="d-flex justify-content-around">
+        <div style="width: 48%">
+          <label for="exampleFormControlInput1" class="form-label">Product Name</label>
+          <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Product Name"
+                 formControlName="productName">
+        </div>
+
+        <div style="width: 48%">
+          <label for="exampleFormControlInput2" class="form-label">Product Category</label>
+          <select id="exampleFormControlInput2" class="form-select" aria-label="Default select example"
+                  formControlName="productCategory">
+            <option value="Raw">Raw</option>
+            <option value="Powder">Powder</option>
+            <option value="Mushroom">Mushroom</option>
+            <option value="Dehydrate">Dehydrated</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="d-flex justify-content-around">
+        <div style="width: 48%">
+          <label for="exampleFormControlInput3" class="form-label">Stock</label>
+          <input type="text" class="form-control" id="exampleFormControlInput3" placeholder="kg"
+                 formControlName="quantity">
+        </div>
+
+        <div style="width: 48%">
+          <label for="exampleFormControlInput4" class="form-label">Price</label>
+          <input type="text" class="form-control" id="exampleFormControlInput4" placeholder="Per 100g"
+                 formControlName="unitPrice">
+        </div>
+      </div>
+
+      <div class="d-flex justify-content-around">
+        <div style="width: 98%">
+          <label for="exampleFormControlInput5" class="form-label">Image Link</label>
+          <input type="text" class="form-control" id="exampleFormControlInput5" placeholder="Image Link"
+                 formControlName="imgLink">
+        </div>
+      </div>
+
+      <div class="d-flex justify-content-around">
+        <div style="width: 98%">
+          <label for="exampleFormControlTextarea6" class="form-label">Description</label>
+          <textarea class="form-control" id="exampleFormControlTextarea6" rows="3" placeholder="Description"
+                    formControlName="description"></textarea>
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-danger mt-3 me-2" style="float: right" (click)="onAddEditBtn()">
+        <span *ngIf="formType=='new'">
+          Add
+        </span>
+        <span *ngIf="formType=='edit'">
+          Update
+        </span>
+      </button>
+
+    </form>
+  </div>
+</div>
+

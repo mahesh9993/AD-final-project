@@ -1,0 +1,14 @@
+.login{
+  /*border: 1px solid black;*/
+  padding: 20px 90px 0px 30px;
+}
+
+.signup{
+  /*border: 1px solid black;*/
+  padding: 20px 30px 0px 30px;
+}
+
+.sbbtn{
+  background-color: #be0606;
+  color: white;
+}

@@ -1,0 +1,52 @@
+<div class="pitem-align">
+  <div class='container-fluid'>
+    <div class="card mx-auto col-md-3 col-10">
+      <img class='mx-auto img-thumbnail'
+           src="{{product.imgLink}}"
+           width="450px" height="100%"/>
+      <div class="card-body text-center mx-auto">
+        <div class='cvp'>
+          <h5 class="card-title font-weight-bold">{{product.productName}}</h5>
+          <select #qty class="select" (change)="totalPrice(qty.value)" *ngIf="orderNow == 'show'">
+            <option value="0">Quantity</option>
+            <option value="1">100g</option>
+            <option value="2">250g</option>
+            <option value="3">500g</option>
+            <option value="4">1kg</option>
+            <option value="5">2kg</option>
+          </select>
+          <p class="card-text">Rs. {{total}}</p>
+          <span *ngIf="orderNow=='show'">
+              <button class="btn cart px-auto" (click)="onOrderNow()">ORDER NOW</button><br />
+              <button class="btn cart px-auto" (click)="onAddToCart(product)">ADD TO CART</button>
+          </span>
+        </div>
+      </div>
+
+        <span *ngIf="orderNow=='hide'">
+            <div>
+              <h6 class="ms-2">Additional Rs.300 will be charged for shipping</h6>
+              <div class="m-2">
+                  <form [formGroup]="orderForm">
+                    <label  class="form-label">Delivery Address</label>
+                    <textarea class="form-control"  rows="3" formControlName="deliveryAddress" ></textarea>
+                  </form>
+              </div>
+              <div style="text-align: center">
+                <button class="btn cart w-25" (click)="onOrderConfirm()">CONFIRM</button>
+              </div>
+            </div>
+          </span>
+
+    </div>
+  </div>
+</div>
+
+<div class="pdecription">
+  <h1>Product Description :</h1>
+  <br/>
+  <div style="width: 500px">
+    <p style="text-align: justify;">{{product.description}}</p>
+  </div>
+</div>
+

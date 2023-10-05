@@ -1,0 +1,14 @@
+<div class="container" *ngIf="products.length!=0">
+  <div class="row">
+      <div class="card col-md-2 m-3" *ngFor="let product of products">
+        <div class="srchItem" routerLink="/product-menu/order" (click)="onSearchItem(product.productId)">
+          <img class="card-img-top pro-align" src="{{product.imgLink}}" alt="">
+          <h5 class="card-title">{{product.productName}}</h5>
+        </div>
+    </div>
+  </div>
+</div>
+
+<div class="container" *ngIf="products.length==0">
+  <h4 style="text-align: center;margin-top: 100px; margin-bottom: 100px">Items Not Found...!!!</h4>
+</div>

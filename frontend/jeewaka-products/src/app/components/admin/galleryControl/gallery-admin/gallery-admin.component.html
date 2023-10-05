@@ -1,0 +1,33 @@
+<div class="container mt-4">
+  <div class="cart-table">
+    <div class="cart-product">
+      <div class="d-flex justify-content-between m-3">
+        <h3>Gallery Contoller</h3>
+        <button class="btn btn-danger" (click)="onAddNewBtn()">Add New</button>
+      </div>
+      <table class="table table-responsive">
+        <thead>
+        <tr>
+          <th>Serial No.</th>
+          <th>Image No.</th>
+          <th>Image</th>
+          <th>Subject</th>
+          <th>Description</th>
+          <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let image of gallery; let i = index;">
+          <td>{{i+1}}</td>
+          <td>{{image.slotId}}</td>
+          <td><img style="width: 100px; height: 100px;" src="{{image.imgLink}}"></td>
+          <td>{{image.subject}}</td>
+          <td>{{image.description}}</td>
+          <td style="text-align: center;"><fa-icon [icon]="faDeleteLeft" style="cursor: pointer;"
+                                                   (click)="onDeleteBtn(image)"></fa-icon></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

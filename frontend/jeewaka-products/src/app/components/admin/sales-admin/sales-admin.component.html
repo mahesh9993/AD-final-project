@@ -1,0 +1,42 @@
+<div class="card mt-4">
+  <div class="card-body">
+    <h3>Sales</h3>
+
+    <div class="mt-3 mb-3" style="width: 45%;">
+      <form [formGroup]="searchForm">
+        <div class="input-group">
+          <input type="search" class="form-control rounded" placeholder="Order ID"
+                 aria-label="Search" aria-describedby="search-addon" formControlName="searchInput" />
+          <button type="button" class="btn btn-outline-danger" (click)="onAdSaleSearchBtn()">search</button>
+        </div>
+      </form>
+    </div>
+
+    <table class="table table-striped table-hover">
+      <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Order ID</th>
+        <th scope="col">User ID</th>
+        <th scope="col">Product</th>
+        <th scope="col">Qty</th>
+        <th scope="col">Amount</th>
+        <th scope="col">Delivery Address</th>
+        <th scope="col">Action</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let sale of sales; let i = index;">
+        <th scope="row">{{i+1}}</th>
+        <th style="text-align: center;">{{sale.orderId}}</th>
+        <td>{{sale.userId}}</td>
+        <td>{{sale.productName}}</td>
+        <td>{{sale.quantity}}</td>
+        <td>{{sale.amount}}</td>
+        <td>{{sale.deliveryAddress}}</td>
+        <td><fa-icon [icon]="faUndo" style="cursor: pointer;" (click)="onUndo(sale)"></fa-icon></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
